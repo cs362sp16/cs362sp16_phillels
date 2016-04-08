@@ -834,15 +834,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return smithy_action(currentPlayer, handPos, state);
 
     case village:
-      //+1 Card
-      drawCard(currentPlayer, state);
-
-      //+2 Actions
-      state->numActions = state->numActions + 2;
-
-      //discard played card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return village_action(currentPlayer, handPos, state);
 
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -896,15 +888,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case great_hall:
-      //+1 Card
-      drawCard(currentPlayer, state);
-
-      //+1 Actions
-      state->numActions++;
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return great_hall_action(currentPlayer, handPos, state);
 
     case minion:
       //+1 action
@@ -958,27 +942,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case steward:
-      if (choice1 == 1)
-	{
-	  //+2 cards
-	  drawCard(currentPlayer, state);
-	  drawCard(currentPlayer, state);
-	}
-      else if (choice1 == 2)
-	{
-	  //+2 coins
-	  state->coins = state->coins + 2;
-	}
-      else
-	{
-	  //trash 2 cards in hand
-	  discardCard(choice2, currentPlayer, state, 1);
-	  discardCard(choice3, currentPlayer, state, 1);
-	}
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return steward_action(choice1, choice2, choice3, currentPlayer, handPos, state);
 
     case tribute:
       if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1){
@@ -1150,12 +1114,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 
     case outpost:
-      //set outpost flag
-      state->outpostPlayed++;
-
-      //discard card
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+      return outpost_action(currentPlayer, handPos, state);
 
     case salvager:
       //+1 buy
