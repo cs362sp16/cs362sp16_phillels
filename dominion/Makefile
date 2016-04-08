@@ -6,8 +6,11 @@ rngs.o: rngs.h rngs.c
 dominion.o: dominion.h dominion.c rngs.o
 	gcc -c dominion.c -g  $(CFLAGS)
 
-playdom: dominion.o playdom.c
-	gcc -o playdom playdom.c -g dominion.o rngs.o $(CFLAGS)
+cards.o: cards.h cards.c
+	gcc -c cards.c -g $(CFLAGS)
+
+playdom: dominion.o cards.o playdom.c
+	gcc -o playdom playdom.c -g dominion.o rngs.o cards.o $(CFLAGS)
 
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
