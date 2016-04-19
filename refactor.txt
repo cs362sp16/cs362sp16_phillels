@@ -1,0 +1,3 @@
+I refactored the 5 cards by putting them in their own functions in cards.c and writing a library cards.h. I passed the arguments for each card from dominion.c to
+their respective functions in cards.c. I then had cards.c return in dominion.c.  I modified the makefile
+to correctly compile the program with the addition of cards.c and cards.h. 
