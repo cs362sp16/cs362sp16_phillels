@@ -32,8 +32,8 @@ cardtest: $(WILDCARD unittest/*.c) dominion.o
 	$(CC) -o cardtest3 cardtest/cardtest3.c dominion.o rngs.o cards.o $(CFLAGS)
 	$(CC) -o cardtest4 cardtest/cardtest4.c dominion.o rngs.o cards.o $(CFLAGS)
 
-autotest: unittest
-	./goas.sh > unittestresults.out 
+autotest: unittest cardtest
+	./goas.sh > unittestresults.out
 
 all: playdom player unittest cardtest
 

@@ -1,0 +1,70 @@
+---- unittest1 ----
+
+File 'dominion.c'
+Lines executed:1.94% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- unittest2 ----
+
+File 'dominion.c'
+Lines executed:1.94% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- unittest3 ----
+
+File 'dominion.c'
+Lines executed:0.16% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- unittest4 ----
+
+File 'dominion.c'
+Lines executed:0.16% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- cardtest1 ----
+Testing gardens
+Testing complete on gardens
+
+File 'dominion.c'
+Lines executed:1.94% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- cardtest2 ----
+Testing embargo
+Testing complete on embargo
+
+File 'dominion.c'
+Lines executed:4.04% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- cardtest3 ----
+Assertion failed at cardtest/cardtest3.c inside main: 
+	Condition: !(state->deck[1][1] == village)
+Assertion failed at cardtest/cardtest3.c inside main: 
+	Condition: state->deckCount[1] == 2
+Testing sea_hag
+Testing complete on sea_hag
+
+File 'dominion.c'
+Lines executed:2.91% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
+---- cardtest4 ----
+Assertion failed at cardtest/cardtest4.c inside main: 
+	Condition: state->numActions == 1
+Testing great_hall
+Testing complete on great_hall
+
+File 'dominion.c'
+Lines executed:1.94% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+

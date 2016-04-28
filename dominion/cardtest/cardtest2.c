@@ -6,7 +6,7 @@
 int main(){
 	struct gameState* state = calloc(1, sizeof(struct gameState));
 	 state->coins =  2;
-	printf("Testing sea_hag\n");
+	printf("Testing embargo\n");
 	int result = cardEffect(embargo, 2, 0, 0, state, 0, 0);
 	newassert(!(result == -1));
 

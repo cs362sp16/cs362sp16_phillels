@@ -1,0 +1,24 @@
+testing efforts
+
+unittest1 covers 1.94% of the 619 statements in dominion.c. This makes sense since uninttest1 was testing isGameOver which has very few statements. 
+
+unittest2 covers 1.94% of the 619 statements in dominion.c. Unittest 2 was testing kingdomCards which has very few statements. 
+
+unittest3 covers 0.16% of the 619 statements in dominion.c. It was testing supplyCount which has very few statements. 
+
+
+unittest4 covers 0.16% of the 619 statements in dominion.c. It was testing whoseTurn which has very few statements. 
+
+
+cardtest1 covers 1.94% of the 619 statements in dominion.c. It was testing gardens which has very few statements. 
+
+
+cardtest2 covers 4.04% of the 619 statements in dominion.c. It was testing embargo which has very few statements. 
+
+
+cardtest3 covers 2.91% of the 619 statements in dominion.c. It was testing sea_hag which has very few statements. 
+
+
+cardtest4 covers 1.94% of the 619 statements in dominion.c. It was testing great_hall which has very few statements. 
+
+Using the custom assert made this assignment much easier. I liked that my assert would tell you the file and function where the assert was failing. Figuring out how to handle setting up a valid gamestate was a little tricky. Creating a complete new state for every test would have been massive and time consuming, so I opted to use calloc and only fill in the parts of the gamestate necessary for the functions and cards I was testing to run. The bug in cardtest3 took me a while to figure out, and I had to put in quite a few asserts to figure out that the remaining card was just being overwritten. I was aware of the bug in 4 since I introduced it. 

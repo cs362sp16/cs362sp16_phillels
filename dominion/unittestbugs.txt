@@ -1,0 +1,5 @@
+Bugs found:
+
+In cardtest3.c I was testing the seahag card. I discovered that it decrements deck and put a curse card on top, but it replaces the top card with curse, and the former top card is not pushed further back into the deck.
+
+In cardtest4.c I was testing the great hall card. I identified that the pointer types were incorrect and were affecting the functionality of the card.
