@@ -1,0 +1,13 @@
+---- randomtestadventurer ----
+Assertion failed at randomtester/randomtestadventurer.c inside main: 
+	Condition: state.handCount[i] == amountTreasure[i]
+Testing adventurer
+Testing complete on adventurer
+Testing adventurer
+Testing complete on adventurer
+
+File 'dominion.c'
+Lines executed:4.85% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+

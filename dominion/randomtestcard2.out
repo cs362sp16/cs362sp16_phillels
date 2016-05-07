@@ -1,0 +1,23 @@
+---- randomtestcard2 ----
+Assertion failed at randomtester/randomtestcard2.c inside main: 
+	Condition: result1 == -1
+Assertion failed at randomtester/randomtestcard2.c inside main: 
+	Condition: (state.coins == (og_coins + 2))
+Assertion failed at randomtester/randomtestcard2.c inside main: 
+	Condition: result1 == -1
+Assertion failed at randomtester/randomtestcard2.c inside main: 
+	Condition: state.coins == (og_coins + 4)
+Testing embargo
+before function call: 91
+after function fall:93
+Testing complete on embargo
+Testing embargo
+before function call: 95
+after function fall:-1
+Testing complete on embargo
+
+File 'dominion.c'
+Lines executed:3.88% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+

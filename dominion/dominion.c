@@ -673,18 +673,18 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
-	drawCard(currentPlayer, state);
+	drawCard(currentPlayer, state); //t
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
-	  drawntreasure++;
+	  drawntreasure++; //t
 	else{
 	  temphand[z]=cardDrawn;
-	  state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
+	  state->handCount[currentPlayer]--; //t //this should just remove the top card (the most recently drawn one).
 	  z++;
 	}
       }
       while(z-1>=0){
-	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
+	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];//t  // discard all cards in play that have been drawn
 	z=z-1;
       }
       return 0;

@@ -1,0 +1,17 @@
+---- randomtestcard1 ----
+Assertion failed at randomtester/randomtestcard1.c inside main: 
+	Condition: !(state.discardCount[1] == 1)
+Assertion failed at randomtester/randomtestcard1.c inside main: 
+	Condition: (state.deck[i][0]) == curse
+Assertion failed at randomtester/randomtestcard1.c inside main: 
+	Condition: (state.deck[i][0]) == curse
+Testing sea_hag
+Testing complete on sea_hag
+Testing sea_hag
+Testing complete on sea_hag
+
+File 'dominion.c'
+Lines executed:2.91% of 619
+dominion.c:creating 'dominion.c.gcov'
+
+
