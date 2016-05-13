@@ -1,0 +1,15 @@
+Improvements in coverage:
+There was not a significant improvement in coverage.
+
+How much code did you cover (adventurer especially)
+4.85% of 619 of dominion.c for adventurer 
+
+Talk about which card you got to reach 100% branch coverage
+I got 100% branch coverage on embargo and it took less than 1 minute. 
+
+Which tests had higher coverage- unit or random
+They had pretty much the same amount of coverage.
+
+Which tests had better fault detection?
+The random tester caught a fault that I had missed with my unit tester testing embargo with the discardCard function. 
+
