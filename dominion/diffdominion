@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#make a temp folder
+tempf="diffdom$$"
+mkdir $tempf
+
+#compile first implementation of dominion into folder
+clang $1/{testdominion.c,dominion.c,interface.c,rngs.c,cards.c} -o $tempf/t1.out -lm -std=c11 -g
+
+#compile second implementation of dominion into folder
+clang $1/testdominion.c $2/{dominion.c,interface.c,rngs.c,cards.c} -o $tempf/t2.out -lm -std=c11 -g
+
+#run both implementations and store output into files
+./$tempf/t1.out 42 > $tempf/t1results
+./$tempf/t2.out 42 > $tempf/t2results
+
+#diff the files
+diff $tempf/t1results $tempf/t2results > $tempf/diffdomresults
+
+if [ $? == 0 ]; then
+	echo TEST PASSED
+else
+	echo TEST FAILED
+	cat $tempf/diffdomresults
+fi
+
+#remove temp file
+rm -rf $tempf

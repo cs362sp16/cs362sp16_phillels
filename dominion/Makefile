@@ -1,4 +1,4 @@
-CFLAGS = -Wall -fpic -coverage -lm -g -O0
+CFLAGS = -Wall -fpic -coverage -lm -g
 CC = clang
 
 rngs.o: rngs.h rngs.c
@@ -37,11 +37,22 @@ randomtester: $(WILDCARD randomtester/*.c) dominion.o
 	$(CC) -o randomtestcard2 randomtester/randomtestcard2.c dominion.o rngs.o cards.o $(CFLAGS)
 	$(CC) -o randomtestadventurer randomtester/randomtestadventurer.c dominion.o rngs.o cards.o $(CFLAGS)
 
+testdominion: testdominion.c dominion.o
+	$(CC) -o testdominion testdominion.c dominion.o rngs.o cards.o $(CFLAGS)
+
+.PHONY: runtestdominion
+runtestdominion: testdominion
+	./testdominion 42 | tee testdominion.out
+
 
 autotest: unittest cardtest
 	./goas.sh > unittestresults.out
 
-all: playdom player unittest cardtest randomtester
+autorandomtestcard1: randomtestcard1
+	./randomtestcard1 42 > randomtestcard1.out
+	./goas.sh > unittestresults.out
+
+all: playdom player unittest cardtest randomtester runtestdominion
 
 clean:
-	rm -rf *.o playdom.exe playdom test.exe test player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer  player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	rm -rf *.o playdom.exe playdom test.exe test testdominion player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer  player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
