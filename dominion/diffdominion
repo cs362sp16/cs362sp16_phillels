@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 #make a temp folder
 tempf="diffdom$$"
 mkdir $tempf
@@ -25,4 +27,4 @@ else
 fi
 
 #remove temp file
-rm -rf $tempf
+#rm -rf $tempf

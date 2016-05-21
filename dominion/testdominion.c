@@ -4,6 +4,7 @@
 #include "myassert.h"
 #include "stdbool.h"
 
+
 #define MAX_CARD (treasure_map + 1)
 
 enum CARD randcard(){
@@ -65,6 +66,7 @@ int main(int argc, char** argv){
 		buyCard(card2buy,&state);
 		if (isGameOver(&state)){
 			getWinners(&playernum, &state);
+			return 0;
 		}
 		else(endTurn(&state));
 
