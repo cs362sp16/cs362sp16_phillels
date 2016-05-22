@@ -1,0 +1,29 @@
+assert(getCard(curse) == 0);
+assert(getCard(estate) == 2);
+assert(getCard(duchy) == 5);
+assert(getCard(province) == 8);
+assert(getCard(copper) == 0);
+assert(getCard(silver) == 3);
+assert(getCard(gold) == 6);
+assert(getCard(adventurer) == 6);
+assert(getCard(council_room) == 5);
+assert(getCard(feast) == 4);
+assert(getCard(gardens) == 4);
+assert(getCard(mine) == 5);
+assert(getCard(remodel) == 4);
+assert(getCard(smithy) == 4);
+assert(getCard(village) == 3);
+assert(getCard(baron) == 4);
+assert(getCard(great_hall) == 3);
+assert(getCard(minion) == 5);
+assert(getCard(steward) == 3);
+assert(getCard(tribute) == 5);
+assert(getCard(ambassador) == 3);
+assert(getCard(cutpurse) == 4);
+assert(getCard(embargo) == 2);
+assert(getCard(outpost) == 5);
+assert(getCard(salvager) == 4);
+assert(getCard(sea_hag) == 4);
+assert(getCard(treasure_map) == 4);
+
+

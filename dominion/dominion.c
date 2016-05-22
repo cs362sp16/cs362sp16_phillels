@@ -514,6 +514,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state) {
       if ( players[i] == highScore )
 	{
 	  players[i] = 1;
+	  printf("Player %d won with a score of %d\n", i, highScore);
 	}
       else
 	{
