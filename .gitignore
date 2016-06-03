@@ -1,0 +1,5 @@
+diffdom*
+.DS_Store
+_DS_Store
+_build-tools.cson
+*.swp
