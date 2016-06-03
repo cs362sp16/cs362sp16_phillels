@@ -1,7 +1,7 @@
 #include "../dominion.h"
 #include <stdlib.h>
 #include <string.h>
-#include "myassert.h"
+#include "../myassert.h"
 
 int main(){
 	struct gameState* state = calloc(1, sizeof(struct gameState));

@@ -2,7 +2,7 @@
 #include "../cards.h"
 #include "stdlib.h"
 #include <stdio.h>
-#include "myassert.h"
+#include "../myassert.h"
 
 int main(){
 	struct gameState* state = calloc(1, sizeof(struct gameState));
