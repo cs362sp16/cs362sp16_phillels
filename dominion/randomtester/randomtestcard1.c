@@ -2,7 +2,7 @@
 #include "../cards.h"
 #include <stdio.h>
 #include "stdlib.h"
-#include "myassert.h"
+#include "../myassert.h"
 
 enum CARD randcard(){
     return rand() % (treasure_map +1);
