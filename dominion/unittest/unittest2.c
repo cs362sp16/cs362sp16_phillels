@@ -1,5 +1,5 @@
 #include "../dominion.h"
-#include "myassert.h"
+#include "../myassert.h"
 
 int main() {
 	int i;
