@@ -11,6 +11,9 @@ dominion.o: dominion.h dominion.c rngs.o cards.o
 cards.o: cards.h cards.c
 	$(CC) -c cards.c -g $(CFLAGS)
 
+adventurer.o: adventurer.h adventurer.c
+	$(CC) -c adventurer.c -g $(CFLAGS)
+
 playdom: dominion.o playdom.c
 	$(CC) -o playdom playdom.c -g dominion.o rngs.o cards.o $(CFLAGS)
 
@@ -37,10 +40,13 @@ randomtester: $(WILDCARD randomtester/*.c) dominion.o
 	$(CC) -o randomtestcard2 randomtester/randomtestcard2.c dominion.o rngs.o cards.o $(CFLAGS)
 	$(CC) -o randomtestadventurer randomtester/randomtestadventurer.c dominion.o rngs.o cards.o $(CFLAGS)
 
+adventurertest: $(WILDCARD randomtester/*.c) dominion.o adventurer.o
+		$(CC) -o adventurertest randomtester/randomtestadventurer.c dominion.o adventurer.o rngs.o cards.o $(CFLAGS)
+
 testdominion: testdominion.c dominion.o
 	$(CC) -o testdominion testdominion.c dominion.o rngs.o cards.o $(CFLAGS)
 
-.PHONY: runtestdominion
+
 runtestdominion: testdominion
 	./testdominion 42 | tee testdominion.out
 
@@ -54,5 +60,12 @@ autorandomtestcard1: randomtestcard1
 
 all: playdom player unittest cardtest randomtester runtestdominion testdominion
 
+tarantula: adventurertest
+	./tarantula.py 
+
 clean:
-	rm -rf *.o playdom.exe playdom test.exe test testdominion player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer  player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
+	clear
+	rm -rf *.o playdom.exe playdom test.exe test  testdominion adventurertest player unittest1 unittest2 unittest3 unittest4 cardtest1 cardtest2 cardtest3 cardtest4 randomtestcard1 randomtestcard2 randomtestadventurer  player.exe testInit testInit.exe *.gcov *.gcda *.gcno *.so *.a *.dSYM
+
+
+.PHONY: runtestdominion clean tarantula

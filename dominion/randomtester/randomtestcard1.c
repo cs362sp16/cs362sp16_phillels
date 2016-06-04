@@ -2,7 +2,10 @@
 #include "../cards.h"
 #include <stdio.h>
 #include "stdlib.h"
+#define ASSERT_TRACK
 #include "../myassert.h"
+
+int asserttrack = 0;
 
 enum CARD randcard(){
     return rand() % (treasure_map +1);
@@ -12,7 +15,7 @@ int main(int argc, char** argv){
 	int seed = atoi(argv[1]);
 	srand(seed);
 	struct gameState state = {0};
-	int playernum = rand() % MAX_PLAYERS;
+	int playernum = (rand() % (MAX_PLAYERS -1)+1);
 	state.numPlayers = playernum;
 	for(int i = 0; i < playernum; i++){
 	    int carddeck = rand() % 45;
@@ -35,5 +38,5 @@ int main(int argc, char** argv){
     printf("Testing complete on sea_hag\n");
 
 }
-return 0;
+return asserttrack;
 }
