@@ -1,0 +1,21 @@
+0.7	        8:	        8:	    6:int adventurer_action (int drawntreasure, struct gameState *state, int currentPlayer){
+0.7	        8:	        8:	    7:  int temphand[MAX_HAND];// moved above the if statement
+0.7	        8:	        8:	    8:  int z = 0;// this is the counter for the temp hand
+0.7	        8:	        8:	    9:  int cardDrawn;
+0.84	      122:	      277:	   10:  while(drawntreasure<2){
+0.85	      106:	      261:	   11:    if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+0.95	        9:	       78:	   12:      shuffle(currentPlayer, state);
+0.95	        9:	       78:	   13:    }
+0.85	      106:	      261:	   14:    drawCard(currentPlayer, state); //t
+0.85	      106:	      261:	   15:    cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
+0.85	      304:	      762:	   16:    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+0.7	       16:	       16:	   17:    drawntreasure++; //t
+0.86	       90:	      245:	   19:      temphand[z]=cardDrawn;
+0.86	       90:	      245:	   20:      state->handCount[currentPlayer]--; //t //this should just remove the top card (the most recently drawn one).
+0.86	       90:	      245:	   21:      z++;
+0.85	      106:	      261:	   23:  }
+0.85	      106:	      261:	   24:  while(z-1>=0){
+0.86	       90:	      245:	   25:    state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1];//t  // discard all cards in play that have been drawn
+0.86	       90:	      245:	   26:    z=z-1;
+0.86	       90:	      245:	   27:  }
+0.7	        8:	        8:	   28:  return 0;

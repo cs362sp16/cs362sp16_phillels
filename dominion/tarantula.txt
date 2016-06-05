@@ -1,0 +1,5 @@
+For the third component of the final I chose to implement tarantula as a means of fault localization. I chose to examine the adventure card (adventurer.c), and used my existing random tester for adventurer (randomtestadventurer.c). The color coded results get printed to the screen after you run `make tarantula`, or for just a numerical version you can open tarantula summary.out. The first column is the suspiciousness of the line of code, the second column is the line number, the third column is the number of times that line of code ran in passing tests, the fourth column is the number of times that line of code ran in failing tests, and the fifth column is the code itself. 
+
+My tarantula implementation was not helpful in identifying bugs in adventurer because almost always it identified all of the lines as being highly suspicious. 
+
+ 

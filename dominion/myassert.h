@@ -7,7 +7,7 @@
 	{ \
 		if(!(condition)) \
 		{ \
-			fprintf(stderr, "Incrementing assert.\nGiraffe failed at %s inside %s: \n\tCondition: %s\n",\
+			fprintf(stderr, "Test failed at %s inside %s: \n\tCondition: %s\n",\
 			__FILE__, __FUNCTION__, (#condition)); \
 			asserttrack++; \
 		} \
@@ -17,7 +17,7 @@
 	{ \
 		if(!(condition)) \
 		{ \
-			fprintf(stderr, "Giraffe failed at %s inside %s: \n\tCondition: %s\n",\
+			fprintf(stderr, "Test failed at %s inside %s: \n\tCondition: %s\n",\
 			__FILE__, __FUNCTION__, (#condition)); \
 		} \
 	}

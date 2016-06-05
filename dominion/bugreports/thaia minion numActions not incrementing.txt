@@ -1,0 +1,4 @@
+When the minion card in played through cardEffect, numActions is not incremented. This can be verified by checking state->numActions before the card is played and after the card is played. This is a low severity, moderate priority bug because while this bug only effects one card, having the extra action from this card could significantly alter the result of the game by giving someone the opportunity to play another action card. 
+
+
+

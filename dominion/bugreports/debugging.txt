@@ -1,0 +1,5 @@
+	Within my full game random tester I ran into an infinite loop where the game wouldn’t end after the winning conditions had been met. To try to resolve this bug I used valgrind to see if there was a memory leak, which there wasn’t one. Then I used gdb to set break points throughout the program, and discovered that it was not returning out of the conditional check for whether the game was over. Within that statement I had not returned. Once I put a return within the if loop, the program was able to complete the game.
+
+	I used several of Agan’s rules to debug this problem. The first one that I did was quit thinking and look. Instead of pouring over my code, I went immediately to the debugger and started tracing back the fault that way rather than speculating and making blind adjustments in hope that the bug would get fixed. I also used divide and conquer. By using break points with gdb I was able to narrow down the source of the problem. I also only changed one thing at a time. 
+
+

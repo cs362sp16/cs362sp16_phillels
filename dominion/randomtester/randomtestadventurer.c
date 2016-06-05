@@ -1,11 +1,12 @@
 #include "../dominion.h"
 #include <stdio.h>
 #include "stdlib.h"
-#include "../myassert.h"
 #include <signal.h>
 #include <unistd.h>
 
-
+#define ASSERT_TRACK
+#include "../myassert.h"
+int asserttrack = 0;
 
 enum CARD randcard(){
     return rand() % (treasure_map +1);
@@ -59,5 +60,5 @@ int main(int argc, char** argv){
 
 
 
-   return 0;
+   return asserttrack;
  }
